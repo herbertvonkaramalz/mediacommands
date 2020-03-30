@@ -16,3 +16,8 @@ youtube-dl -cit <playlist_url>
 ```
 echo "Enter m3u8 link:";read link;echo "Enter output filename:";read filename;ffmpeg -i "$link" -bsf:a aac_adtstoasc -vcodec copy -c copy -crf 50 $filename.mp4
 ```
+
+## Generate Video-File using Image and Audio Files in FFMPEG
+```
+ffmpeg -i image.jpg -i audio.mp3 -c:v libx264 -tune stillimage -c:a copy out.mp4
+```
